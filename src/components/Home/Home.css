@@ -1,0 +1,124 @@
+
+
+.TitleFont {
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+}
+
+.RiderCont {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 'bateria' 'cuerdas';
+    background-color: white;
+    gap: -1rem;
+    font-family: "Press Start 2P", system-ui;
+}
+
+.ImgGif {
+    max-width: 13rem;
+    max-height: 15rem;
+}
+
+.CuerdasCont {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.2rem;
+    margin-top: -5rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    /* max-width: 1vw; */
+}
+
+.LilP {
+    font-size: 70%;
+}
+
+.LililP {
+    font-size: 40%;
+}
+
+.Elecciones {
+    display: flex;
+    justify-content: space-around;
+    font-family: "Press Start 2P", system-ui;
+}
+
+.BotonEleccion {
+    cursor: pointer;
+}
+
+.BotonEleccion:hover {
+    color: aquamarine;
+    transform: scale(1.1);
+}
+
+.Active {
+    transform: scale(1.1);
+    color: aquamarine;
+}
+
+.BataCont {
+    color: black;
+    /* max-width: 1vw; */
+}
+
+.FormaCont {
+    font-family: "Press Start 2P", system-ui;
+    display: grid;
+    margin-top: 5rem;
+    /* width: 1vw; */
+    justify-content: center;
+    align-items: center;
+}
+
+.sparkle {
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    position: absolute;
+    animation: sparkleAnimation 10s infinite linear;
+    box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 80px #00ff00;
+    z-index: -1;
+}
+
+@media (max-width: 576px) {
+    .Elecciones {
+        font-size: 55%;
+    }
+}
+
+@keyframes sparkleAnimation {
+    0% {
+        opacity: 1;
+        transform: translateY(0) translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(calc(var(--randomYDirection) * 50px)) translateX(calc(var(--randomXDirection) * 50px));
+    }
+}
+
+p.credit {
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+    margin: 0;
+    padding: 5px;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    transition: transform 0.5s ease-in-out;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
