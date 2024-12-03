@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import './Home.css';
 
 const Home = () => {
@@ -14,7 +14,11 @@ const Home = () => {
         const randomY = Math.random() * (window.innerHeight - sparkleSize);
         sparkle.style.left = `${randomX}px`;
         sparkle.style.top = `${randomY}px`;
-    
+
+        sparkle.style.width = '1vw';
+        sparkle.style.height = '1vh';
+        sparkle.style.maxWidth = '1vw';
+        sparkle.style.maxHeight = '1vh';
     
         const randomXDirection = (Math.random() - 0.5)*10;
         const randomYDirection = (Math.random() - 0.5)*10;
@@ -32,8 +36,11 @@ const Home = () => {
             sparkle.remove();
         }, 10000); 
     }
+
+    useEffect(() => {
+        if (eleccion === "formacion") setInterval(createRandomSparkle, 1000); 
+    }, [eleccion])
     
-    setInterval(createRandomSparkle, 1000); 
 
     return (
         <>
